@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Encuesta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Banner -->
+    <header class="banner">
+        <div class="banner-item"><a href="index.html">Inicio</a></div>
+        <div class="banner-item"><a href="encuestas.html">Encuestas</a></div>
+        <div class="banner-item"><a href="login.html">Login</a></div>
+    </header>
+
+    <!-- Crear encuesta -->
+    <section id="survey-creation">
+        <h2>Crear Encuesta</h2>
+        <form id="survey-form">
+            <label for="name">Nombre de la encuesta:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="type">Tipo de encuesta:</label>
+            <select id="type" name="type">
+                <option value="publica">Encuesta Pública</option>
+                <option value="privada">Encuesta Privada</option>
+            </select>
+
+            <div id="questions-container">
+                <h3>Preguntas</h3>
+                <div class="question" id="question-1">
+                    <label for="question-1-text">Pregunta 1:</label>
+                    <input type="text" id="question-1-text" name="question-1-text" required>
+
+                    <label>Opciones de respuesta:</label>
+                    <div>
+                        <input type="checkbox" name="option-1" value="Opción 1"> Opción 1
+                    </div>
+                    <div>
+                        <input type="checkbox" name="option-1" value="Opción 2"> Opción 2
+                    </div>
+                    <div>
+                        <input type="checkbox" name="option-1" value="Opción 3"> Opción 3
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="add-question-btn">Agregar Pregunta</button>
+            <button type="submit">Crear Encuesta</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 EncuestAPP</p>
+    </footer>
+
+    <script src="js/crear-encuesta.js"></script>
+</body>
+</html>

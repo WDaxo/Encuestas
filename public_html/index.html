@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncuestAPP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Banner -->
+    <header class="banner">
+        <div class="banner-item"><a href="index.html">Inicio</a></div>
+        <div class="banner-item"><a href="encuestas.html">Encuestas</a></div>
+        <div class="banner-item"><a href="login.html">Login</a></div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1>Bienvenido a EncuestAPP</h1>
+        <p class="intro">Selecciona una opción del menú.</p>
+
+        <div class="options">
+            <button class="button" onclick="window.location.href='crear-encuesta.html'">Crear Encuesta</button>
+            <button class="button" onclick="window.location.href='editar-encuesta.html'">Editar Encuesta</button>
+        </div>
+
+        <h2>Encuestas Guardadas</h2>
+        <table id="survey-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las encuestas guardadas aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EncuestAPP</p>
+    </footer>
+
+    <script src="js/encuestas.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Encuesta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Banner -->
+    <header class="banner">
+        <div class="banner-item"><a href="index.html">Inicio</a></div>
+        <div class="banner-item"><a href="encuestas.html">Encuestas</a></div>
+        <div class="banner-item"><a href="login.html">Login</a></div>
+    </header>
+
+    <!-- Editar encuesta -->
+    <section id="survey-edit">
+        <h2>Editar Encuesta</h2>
+        <form id="edit-survey-form">
+            <label for="edit-survey-name">Nombre de la encuesta:</label>
+            <input type="text" id="edit-survey-name" required>
+
+            <label for="edit-survey-type">Tipo de encuesta:</label>
+            <select id="edit-survey-type">
+                <option value="publica">Encuesta Pública</option>
+                <option value="privada">Encuesta Privada</option>
+            </select>
+
+            <div id="edit-questions-container">
+                <!-- Las preguntas de la encuesta se cargarán aquí -->
+            </div>
+
+            <button type="button" id="add-edit-question-btn">Agregar Pregunta</button>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </section>
+    <script src="js/editar-encuesta.js"></script>
+</body>
+</html>
