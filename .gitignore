@@ -1,0 +1,10 @@
+# Ignorar archivos sensibles
+conexion.php
+
+# Ignorar carpetas locales
+/node_modules/
+/vendor/
+
+# Ignorar archivos temporales
+*.log
+*.env
