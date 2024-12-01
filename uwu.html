@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Encuestas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+        .content {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Panel del Administrador</h1>
+        <p>Gestiona las encuestas desde este panel.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a onclick="mostrarSeccion('crear')">Crear Encuesta</a></li>
+            <li><a onclick="mostrarSeccion('editar')">Editar Encuesta</a></li>
+            <li><a onclick="mostrarSeccion('eliminar')">Eliminar Encuesta</a></li>
+        </ul>
+    </nav>
+    <div class="content" id="contenido">
+        <h2>Bienvenido al Administrador de Encuestas</h2>
+        <p>Selecciona una opción del menú para empezar.</p>
+    </div>
+
+    <script>
+        // Función para mostrar el contenido según la opción seleccionada
+        function mostrarSeccion(seccion) {
+            const contenido = document.getElementById('contenido');
+            
+            if (seccion === 'crear') {
+                contenido.innerHTML = `
+                    <h2>Crear Encuesta</h2>
+                    <form id="crearForm">
+                        <label for="titulo">Título de la encuesta:</label><br>
+                        <input type="text" id="titulo" name="titulo" required><br><br>
+                        
+                        <label for="pregunta">Pregunta:</label><br>
+                        <input type="text" id="pregunta" name="pregunta" required><br><br>
+                        
+                        <button type="submit">Crear</button>
+                    </form>
+                `;
+            } else if (seccion === 'editar') {
+                contenido.innerHTML = `
+                    <h2>Editar Encuesta</h2>
+                    <p>Funcionalidad en desarrollo...</p>
+                `;
+            } else if (seccion === 'eliminar') {
+                contenido.innerHTML = `
+                    <h2>Eliminar Encuesta</h2>
+                    <p>Funcionalidad en desarrollo...</p>
+                `;
+            } else {
+                contenido.innerHTML = `
+                    <h2>Error</h2>
+                    <p>Sección no encontrada.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

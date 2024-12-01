@@ -1,20 +1,35 @@
-/* Estilo general */
+/* ===== General ===== */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
+    background-color: #f9f9f9; /* Ajustado del ejemplo */
     margin: 0;
     padding: 0;
     color: #333;
 }
 
-h2 {
-    font-size: 24px;
-    color: #444;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-/* Estilo del header (banner superior) */
+h1, h2 {
+    color: #4CAF50;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Header ===== */
 header {
-    background-color: #333;
+    background-color: #007bff; /* Mejor visibilidad */
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -23,25 +38,25 @@ header {
 
 .banner {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-}
-
-.banner-item {
+    background-color: #007bff; /* Reforzado */
     color: white;
-    font-size: 1.2em;
+    padding: 10px 20px;
+}
+
+.banner a {
+    color: white;
     text-decoration: none;
-    padding: 12px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-.banner-item:hover {
-    background-color: #555;
-    border-radius: 4px;
+.banner a:hover {
+    text-decoration: underline;
 }
 
-/* Sección de bienvenida */
+/* ===== Welcome Section ===== */
 #welcome-section {
     text-align: center;
     padding: 50px 20px;
@@ -49,35 +64,51 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-#welcome-section h2 {
-    font-size: 30px;
-    color: #333;
-}
-
 #welcome-section p {
     font-size: 18px;
     color: #777;
 }
 
-/* Sección de crear encuesta */
-#survey-creation, #edit-section {
-    background-color: #fff;
+/* ===== Survey Forms ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     padding: 20px;
-    margin: 20px auto;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#survey-creation h2, #edit-section h2 {
-    text-align: center;
-    color: #4CAF50;
-    font-size: 28px;
+input[type="text"], select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-/* Estilo de las preguntas */
-#questions-container .question {
+input[type="text"]:focus, select:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ===== Question Blocks ===== */
+.question, .options-container {
     background-color: #f9f9f9;
     padding: 15px;
     margin: 10px 0;
@@ -89,49 +120,14 @@ header {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 10px;
 }
 
 .options-container input[type="checkbox"] {
-    width: auto;
     margin-left: 10px;
+    width: auto;
 }
 
-/* Contenedor de formularios */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input[type="text"], select, input[type="checkbox"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="text"]:focus, select:focus {
-    border-color: #4CAF50;
-}
-
-/* Estilo de botones */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    align-self: center;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Estilo de la tabla de encuestas */
+/* ===== Survey Table ===== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -139,10 +135,9 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
-    font-size: 1em;
+    border: 1px solid #ddd;
 }
 
 th {
@@ -158,18 +153,16 @@ td {
 td button {
     background-color: #ff6347;
     padding: 8px 16px;
-    border: none;
     color: white;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 td button:hover {
     background-color: #ff4500;
 }
 
-/* Modal para confirmación de eliminación */
+/* ===== Modal ===== */
 .modal {
     display: none;
     position: fixed;
@@ -180,7 +173,7 @@ td button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 .modal-content {
@@ -188,344 +181,85 @@ td button:hover {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    width: 100%;
     max-width: 400px;
 }
 
 .close-btn {
     font-size: 22px;
     color: #555;
-    cursor: pointer;
     position: absolute;
     top: 15px;
     right: 20px;
+    cursor: pointer;
 }
 
 .close-btn:hover {
     color: #ff0000;
 }
 
-#delete-confirmation button {
-    background-color: #f44336;
-    margin-top: 15px;
-    padding: 12px 20px;
-}
-
-#delete-confirmation button:hover {
-    background-color: #e53935;
-}
-
-/* Estilo para los contenedores de preguntas */
-#questions-container .question {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 6px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.options-container input[type="checkbox"] {
-    width: auto;
-    margin-left: 10px;
-}
-
-/* Añadir un pequeño espacio entre los elementos */
-section {
-    padding: 30px 0;
-}
-
+/* ===== Footer ===== */
 footer {
-    background-color: #333;
+    background-color: #007bff; /* Mejor visibilidad */
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px;
 }
 
-/* Formulario de login */
-form#login-form {
-    max-width: 400px;
-    margin: 2em auto;
-    padding: 1.5em;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-form#login-form label {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-form#login-form input {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form#login-form button {
-    width: 100%;
-    padding: 0.7em;
-    font-size: 1em;
-}
-
-/* Contenido principal centrado */
-.content {
-    max-width: 800px; /* Define un ancho máximo para el contenido */
-    margin: 8em auto; /* Centra horizontalmente y da espacio desde el banner */
-    padding: 2em; /* Espaciado interno */
-    background-color: white; /* Fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Centra el texto dentro */
-}
-
-/* Títulos principales */
-.content h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    color: #4CAF50; /* Color verde llamativo */
-}
-
-/* Texto introductorio */
-.content .intro {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 1.5em;
-}
-
-/* Botones principales */
-.options {
-    display: flex;
-    justify-content: center; /* Centra los botones */
-    gap: 1em; /* Espaciado entre botones */
-    margin-bottom: 2em;
-}
-
-.options .button {
-    background-color: #4CAF50; /* Verde principal */
-    color: white;
-    padding: 0.8em 1.5em; /* Espaciado interno */
-    font-size: 1.1em; /* Tamaño del texto */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.options .button:hover {
-    background-color: #45a049; /* Cambio de color al pasar el cursor */
-}
-
-/* Tabla de encuestas */
-table#survey-table {
-    width: 100%; /* Tabla ocupa todo el ancho */
-    margin-top: 2em;
-    border-collapse: collapse; /* Quita los espacios entre celdas */
-}
-
-table#survey-table th, table#survey-table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd; /* Bordes finos */
-    font-size: 1em;
-}
-
-table#survey-table th {
-    background-color: #4CAF50; /* Fondo verde */
-    color: white;
-}
-
-table#survey-table tbody tr:hover {
-    background-color: #f5f5f5; /* Resaltado al pasar el cursor */
-}
-
-/* Ajuste del footer */
-footer {
-    margin-top: 3em; /* Espacio superior */
-    padding: 1em 0;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-
-/* Responsive Design */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-    .content {
-        padding: 1.5em; /* Reduce el padding en pantallas pequeñas */
+    header {
+        text-align: center;
     }
 
-    .options .button {
-        font-size: 1em;
-        padding: 0.7em 1em;
+    .banner {
+        flex-direction: column;
     }
 
-    table#survey-table {
+    .banner a {
+        margin-bottom: 5px;
+    }
+
+    table, form {
         font-size: 0.9em;
     }
+
+    form {
+        padding: 10px;
+    }
 }
 
-/* Contenedor principal del formulario de edición */
-#edit-survey-form {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 2em;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* ===== Carrusel ===== */
+.carousel-inner img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 800px; /* Establece una altura máxima para las imágenes */
+    object-fit: cover; /* Hace que las imágenes cubran el área del contenedor sin distorsionarse */
 }
 
-/* Título del formulario (centrado) */
-#edit-survey-form h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-align: center;
-    color: #4CAF50;
-    font-weight: bold;
+/* Si deseas que las imágenes no sobrepasen un tamaño específico, también puedes establecer max-width en lugar de width: 100%. Ejemplo: */
+.carousel-inner img {
+    max-width: 100%;
+    max-height: 800px; /* O ajusta la altura según prefieras */
 }
 
-/* Inputs de texto y select */
-#edit-survey-form input[type="text"], 
-#edit-survey-form select {
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1.2em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-#edit-survey-form input[type="text"]:focus, 
-#edit-survey-form select:focus {
-    border-color: #4CAF50;
-}
-
-/* Estilo para el contenedor de preguntas */
-#edit-questions-container {
-    margin-top: 2em;
-}
-
-/* Estilo individual de las preguntas */
-#edit-questions-container .question {
-    padding: 1.5em;
-    margin-bottom: 1.5em;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Etiquetas y inputs dentro de las preguntas */
-#edit-questions-container .question label {
-    font-weight: bold;
-    color: #333;
-    display: block;
-    margin-bottom: 0.5em;
-}
-
-#edit-questions-container .question input[type="text"] {
-    width: calc(100% - 10px);
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Opciones de respuesta */
-#edit-questions-container .question div {
+/* Ajuste de los botones de navegación del carrusel */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%; /* Asegura que los botones cubran toda la altura de la imagen */
+    width: 5%; /* Ajusta el ancho de los botones si es necesario */
     display: flex;
-    align-items: center;
-    margin-bottom: 0.5em;
-    gap: 0.5em;
+    align-items: center; /* Centra los iconos verticalmente */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
 }
 
-#edit-questions-container .question input[type="checkbox"] {
-    width: auto;
+/* Para ajustar el tamaño de los iconos */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: white; /* Color de los iconos */
+    border-radius: 50%; /* Hace los iconos redondeados */
+    width: 40px; /* Tamaño del icono */
+    height: 40px; /* Tamaño del icono */
 }
-
-/* Botón para agregar preguntas */
-#add-edit-question-btn {
-    display: block;
-    margin: 2em auto 0;
-    padding: 0.8em 1.5em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#add-edit-question-btn:hover {
-    background-color: #45a049;
-}
-
-/* Botón de envío del formulario */
-#edit-survey-form button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    font-size: 1.2em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 1.5em;
-}
-
-#edit-survey-form button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Botón de eliminar opción o pregunta (si se incluye) */
-.delete-option-btn {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.delete-option-btn:hover {
-    background-color: #ff4500;
-}
-
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    #edit-survey-form {
-        padding: 1.5em;
-    }
-
-    #edit-questions-container .question {
-        padding: 1em;
-    }
-
-    #add-edit-question-btn,
-    #edit-survey-form button[type="submit"] {
-        font-size: 1em;
-        padding: 0.7em;
-    }
-}
-
-/* Agregar margen superior para separarlo de la parte superior de la página */
-#edit-survey-form h2 {
-    margin-top: 0;
-}
-
