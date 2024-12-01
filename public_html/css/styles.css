@@ -242,3 +242,24 @@ footer {
     max-width: 100%;
     max-height: 800px; /* O ajusta la altura según prefieras */
 }
+
+/* Ajuste de los botones de navegación del carrusel */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%; /* Asegura que los botones cubran toda la altura de la imagen */
+    width: 5%; /* Ajusta el ancho de los botones si es necesario */
+    display: flex;
+    align-items: center; /* Centra los iconos verticalmente */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+/* Para ajustar el tamaño de los iconos */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: white; /* Color de los iconos */
+    border-radius: 50%; /* Hace los iconos redondeados */
+    width: 40px; /* Tamaño del icono */
+    height: 40px; /* Tamaño del icono */
+}
