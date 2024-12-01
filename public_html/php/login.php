@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
+//comentado x victor 17:37
 // Conectar a la base de datos
 include 'db_connection.php';
 
